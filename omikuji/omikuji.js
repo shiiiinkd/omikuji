@@ -1,31 +1,58 @@
+//おみくじの確率を定義する関数
+function getOmikuji() {
+    let currentTime = new Date();
+    let currentHour = currentTime.getHours();
 
-function omikuji() {
-    let randomNumber = Math.random();
-    let randomNumber5 = Math.floor(randomNumber * 5) + 1;
+    //通常時の確率
+    let omikujiResults = [
+        { name: "大吉", probability: 5 },
+        { name: "中吉", probability: 15 },
+        { name: "吉", probability: 20 },
+        { name: "小吉", probability: 25 },
+        { name: "末吉", probability: 30 },
+        { name: "凶", probability: 4 },
+        { name: "大凶", probability: 1 },
+    ];
 
-    let omikujiNumber;
-    switch (randomNumber5) {
-        case 1:
-            omikujiNumber = "大吉です";
-            break;
-        case 2:
-            omikujiNumber = "中吉です";
-            break;
-        case 3:
-            omikujiNumber = "小吉です";
-            break;
-        case 4:
-            omikujiNumber = "吉です";
-            break;
-        case 5:
-            omikujiNumber = "凶です";
-            break;
+    //運気上昇中の確率
+    if (currentHour >= 16 && currentHour < 18) {
+        omikujiResults = [
+            { name: "大吉", probability: 50 },
+            { name: "中吉", probability: 30 },
+            { name: "吉", probility: 10 },
+            { name: "小吉", probability: 10 },
+            { name: "末吉", probability: 0 },
+            { name: "凶", probability: 0 },
+            { name: "大凶", probability: 0 },
+        ];
     }
-    alert(omikujiNumber);
-    let object = document.getElementById("omikuji");
-    object.innerText = omikujiNumber;
+    //確率に応じたランダム数を決定する
+    const totalProbability = omikujiResults.reduce((sum, result) => sum + result.probability, 0);
+    const randomNumber = Math.floor(Math.random() * totalProbability);
+
+    //おみくじの結果を決定する
+    let cumulativeProbability = 0;//累積確立を保持する関数
+    for (const result of omikujiResults) {
+        cumulativeProbability += result.probability;
+        if (randomNumber < cumulativeProbability) {
+            return result.name;
+        }
+    }
 
 }
+
+//おみくじの結果を表示する関数
+function shownResult() {
+    const result = getOmikuji();
+    alert("おみくじの結果は" + result + "です！");
+    let object = document.getElementById("omikuji");
+    object.innerText = `おみくじの結果は${result}です！`;
+}
+
+
+
+
+
 
 function updateBackgroundBasedOnTime() {
     let currentTime = new Date();
@@ -49,6 +76,11 @@ updateBackgroundBasedOnTime();
 
 //1時間ごとに画像を更新する
 setInterval(updateBackgroundBasedOnTime, 3600000); //1時間(3600000ミリ秒)ごとに実行
+
+
+
+
+
 
 
 
