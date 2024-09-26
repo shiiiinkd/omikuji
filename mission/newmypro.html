@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport"
+        content="width=320, height=480, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <!-- for smartphone. ここは一旦、いじらなくてOKです。 -->
+    <meta charset="utf-8"><!-- 文字コード指定。ここはこのままで。 -->
+    <title>しんのすけのプロフィール</title>
+</head>
+
+<body>
+    <!-- 見出し 第１レベル -->
+    <!--（氏名）の公開を避ける場合はイニシャルやニックネームでOK-->
+    <div id="header">
+        <h1 id="midashi_1"> しんのすけのプロフィール </h1>
+    </div>
+
+
+
+    <!--自分を象徴するような画像を入れてみよう-->
+    <!--画像も同じフォルダにアップロードすること-->
+    <div id="image">
+        <img src="mrchildren.jpg" alt="自分を象徴する写真など" title="プロフィール画像" width="320px"><br>
+        <p> （画像についてひとこと：I love Mr.children!!）</p>
+    </div>
+
+    <hr>
+
+    <!-- 見出し 第２レベル ・以下、h2レベルで項目を色々書いていきましょう -->
+    <!-- 自己紹介で言いたい項目を見出しにいれて、文章をつくりましょう。項目名は編集OK。項目を足してもOK。 -->
+    <div id="hometown">
+        <h2>所属（出身）など</h2>
+        <p>岐阜県出身の大学二回生、今は滋賀県に下宿しています<br>
+            　とんかつ屋のバイトの傍らにプログラミングを勉強中です！ </p>
+    </div>
+
+    <div id="hobbies">
+        <h2>趣味や属性</h2>
+        　ご飯を食べることが大好きです！<br>
+        　大体音楽聞いてます。Mr.childrenとサカナクションが推しバンドです！<br>
+    </div>
+
+    <div id="favorite-musics">
+        <!-- HTMLで出来る色々な表現を試す -->
+        <!-- ↑文字に意味を持たせることもできます。strong は太字。ググったりして色々と調べてみましょう -->
+        <!-- 例として今回は「リスト表示」を作ってみましょう。項目数が３で足りないなら足してもOKです -->
+        <!-- 番号をふるなら ol タグ、番号がいらないなら ul タグ で囲って、項目は li タグで括ります。 -->
+        <!-- ol ・ ul 片方でOK -->
+        <h2>好きな曲トップ5！</h2>
+        <strong> ミスチルとサカナクションから抜粋しました</strong>（聞いてみてください！）<br>
+        <!-- ↑文字に意味を持たせることもできます。strong は強調。太字になります。 -->
+
+        <ol>
+            <li> <strong>足音 ～Be Strong </strong>-Mr.children</li>
+            <li> <strong>多分、風 </strong>-サカナクション</li>
+            <li> <strong>エソラ </strong>-Mr.children</li>
+            <li> ミュージック -サカナクション</li>
+            <li> HERO -Mr.children</li>
+
+        </ol>
+    </div>
+
+    <div id="dishes">
+        <strong>下宿男子の得意料理トップ３（おまけ）</strong>
+        <ol>
+            <li> 親子丼</li>
+            <li> トマトカレー</li>
+            <li> 卵焼き</li>
+        </ol>
+    </div>
+
+    <hr>
+
+    <!-- 以下は、見出しの名前は固定で、内容を編集してみましょう -->
+    <div id="other-infomations">
+
+        <h2>その他</h2>
+
+        <h3>使用PC</h3>
+        <p>Windows<br>
+            （大学の授業でLinuxも少しだけ触ったことがあります）</p>
+
+        <h3>PC利用経験や、普段の使い方</h3>
+        <p>プログラミング学習と大学の授業、レポート作成などに使っています</p>
+
+        <h3>自分の強みや弱みなど</h3>
+        <p>強み：我慢強くて粘り強いです</p>
+        <p>弱み：朝はとにかく起きれません</p>
+
+        <h3>TECH-BASE参加にあたり、意気込み</h3>
+        <p>精一杯頑張ります！よろしくお願いします！</p>
+    </div>
+
+    <hr>
+
+    <div id="navigation"></div>
+    <!-- ページ内リンクや外部リンク -->
+    <a href="#midashi_1">このページのTOPへ</a> ／
+    <a href="https://www.google.co.jp/" target="_blank">ググる</a>
+    </div>
+
+    <hr>
+
+    <div id="form">
+        <!-- 以下は投稿フォーム欄ですが、今は＆このままでは機能しておらずエラーが発生します。 -->
+        <!-- したがって今はコピペするだけでOKです。スタートアップ以降のPHPミッションを進める際に、参考にしてください。 -->
+        <form method="POST" action="/info">
+            お名前：<input type="text" name="name"><br>
+            コメント：<input type="text" name="comment"><br>
+            <input type="submit" name="submit" value="送信">
+        </form>
+    </div>
+
+</body>
+
+</html>

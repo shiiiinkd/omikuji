@@ -7,7 +7,7 @@ body {
     /*余白をなくす*/
 }
 
-.background-image {
+#backgroundDiv {
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -21,9 +21,20 @@ body {
     margin-top: 20px;
 }
 
-button {
-    display: block;
-    margin: 20px auto;
+.buttons,
+.resultDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #E0E2DB;
+    margin: 20px;
     padding: 10px 20px;
     font-size: 16px;
+    z-index: 1;
+}
+
+.button:hover {
+    background-color: aliceblue;
 }

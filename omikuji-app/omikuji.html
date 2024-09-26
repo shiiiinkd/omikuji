@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ</title>
+
+    <link rel="stylesheet" href="css/omikuji.css">
+</head>
+
+<body>
+
+    <div id="omikuji">おみくじを引いてみましょう！</div>
+    <!--背景画像を管理するdiv-->
+    <div class="backgroundDiv" id="backgroundDiv"></div>
+
+
+    <div class="buttons">
+        <button class="button" onclick="shownResult()">おみくじを引く</button>
+    </div>
+
+    <!--おみくじ結果を管理するdiv-->
+    <div class="resultDiv" id="resultDiv" style="margin-top:10px;"></div>
+
+    <script src="js/omikuji.js"></script>
+
+</body>
+
+</html>
